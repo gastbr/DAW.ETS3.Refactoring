@@ -25,11 +25,13 @@ class TennisGame3:
         return winner
         
     def ShowScore(self):
-        if (self.Winner() != "TBD"): # Si nadie ha ganado aún
+        if (self.Winner() != "TBD"):
+            # Si hay ganador
             result1 = "Win for "
             result2 = self.Winner()
             
-        elif ((self.p1Points < 4 and self.p2Points < 4) and (self.p1Points + self.p2Points) < 6): # Si aún no llegaron al DEUCE
+        elif ((self.p1Points < 4 and self.p2Points < 4) and (self.p1Points + self.p2Points) < 6):
+            # Si aún no llegaron al DEUCE
             result1 = self.scores[self.p1Points] 
             if (self.p1Points == self.p2Points):
                 result2 = "-All"
