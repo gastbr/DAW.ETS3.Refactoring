@@ -36,6 +36,5 @@ class TennisGame3:
     def P1Score(self):
         self.p1 += 1
 
-
     def P2Score(self):
         self.p2 += 1

@@ -5,7 +5,7 @@ import pytest
 # IMPORTANTE: Cuando tengas tu código refactorizado tendrás que hacer su import correspondiente aquí para que se ejecuten los test (si lo has llamado distinto a como estaba originalmente).
 # from tennis1 import TennisGame1
 # from tennis2 import TennisGame2
-from tennis3 import TennisGame3
+from tennis3REF import TennisGame3
 # from tennis4 import TennisGame4
 # from tennis5 import TennisGame5
 # from tennis6 import TennisGame6
@@ -58,9 +58,9 @@ def play_game(TennisGame, p1Points, p2Points, p1Name, p2Name):
     game = TennisGame(p1Name, p2Name)
     for i in range(max(p1Points, p2Points)):
         if i < p1Points:
-            game.won_point(p1Name)
+            game.Score(p1Name)
         if i < p2Points:
-            game.won_point(p2Name)
+            game.Score(p2Name)
     return game
 
 
@@ -80,7 +80,7 @@ def play_game(TennisGame, p1Points, p2Points, p1Name, p2Name):
 @pytest.mark.parametrize('p1Points p2Points score p1Name p2Name'.split(), test_cases)
 def test_get_score_game3(p1Points, p2Points, score, p1Name, p2Name):
     game = play_game(TennisGame3, p1Points, p2Points, p1Name, p2Name)
-    assert score == game.score()
+    assert score == game.ShowScore()
 
 
 # @pytest.mark.parametrize('p1Points p2Points score p1Name p2Name'.split(), test_cases)
